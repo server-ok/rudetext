@@ -11,7 +11,7 @@ export default async function rudeText(req, res) {
         "delay": req.query.delay || 0,
         "font": req.query.font || "Segoe UI",
         "font_size": req.query.font_size || 16,
-        "anchor": req.query.anchor || "middle",
+        "anchor": req.query.anchor || "start",
         "iteration_count": req.query.iteration_count || 1,
         "duration": req.query.duration || 0.5,
     }
