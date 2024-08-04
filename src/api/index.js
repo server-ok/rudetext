@@ -1,4 +1,4 @@
-async function rudeText(req: any, res: any) {
+async function rudeText(req, res) {
 
     let text = req.query.text;
 
