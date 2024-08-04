@@ -1,3 +1,6 @@
+import template from "../template.js";
+
+
 export default async function rudeText(req, res) {
 
     let text = req.query.text;
@@ -14,7 +17,9 @@ export default async function rudeText(req, res) {
         configgers["animation"] = "fall";
     }
 
-    res.send(configgers);
+    let resp = template(configgers);
+    res.setHeader("Content-Type", "image/svg+xml");
+    res.send(resp);
 
 }
 
