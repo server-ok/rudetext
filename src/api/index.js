@@ -3,9 +3,9 @@ import template from "../template.js";
 
 export default async function rudeText(req, res) {
 
-    let text = req.query.text;
 
     let configgers = {
+        "text": req.query.text || "Default text. You better set it to something lol.",
         "text_color": req.query.text_color || "FFFFFF",
         "animation": req.query.anim_name || "fall"
     }
