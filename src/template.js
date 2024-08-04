@@ -14,7 +14,7 @@ export default function template(configgers) {
                 font-family: '${configgers.font}', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
                 fill: #${configgers.text_color};
                 font-size: ${configgers.font_size}px;
-                animation-name: ${configger.animation};
+                animation-name: ${configgers.animation};
                 animation-duration: 0.5s;
                 animation-timing-function: ease-in;
                 animation-fill-mode: forwards;
