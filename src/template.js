@@ -1,4 +1,4 @@
-import punky from "fonts/base64.js"
+import punky from "./fonts/base64.js"
 
 export default function template(configgers) {
 
