@@ -3,7 +3,7 @@
 export default function template(configgers) {
 
     var element = `
-        <svg width="${configgers.font_size*configgers.text.length/2}" height="${configgers.font_size}" viewBox="0 0 ${configgers.font_size*configgers.text.length/2} ${configgers.font_size}" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <svg width="${configgers.font_size*configgers.text.length/2}" height="${configgers.font_size*1.5}" viewBox="0 0 ${configgers.font_size*configgers.text.length/2} ${configgers.font_size*1.5}" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <style>
 
             @font-face {
