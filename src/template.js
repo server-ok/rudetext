@@ -8,7 +8,7 @@ export default function template(configgers) {
 
             @font-face {
                 font-family: punky;
-                src: url("fonts/Punky Wunky.ttf");
+                src: url("https://rudetext.vercel.app/fonts/Punky%20Wunky.ttf");
             }
 
             .THEtext {
