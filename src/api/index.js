@@ -13,6 +13,7 @@ export default async function rudeText(req, res) {
         "font_size": req.query.font_size || 16,
         "anchor": req.query.anchor || "middle",
         "iteration_count": req.query.iteration_count || 1,
+        "duration": req.query.duration || 0.5,
     }
 
     configgers["width"] = req.query.width || configgers.font_size*configgers.text.length/2;
