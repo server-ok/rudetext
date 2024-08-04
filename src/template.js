@@ -17,7 +17,7 @@ export default function template(configgers) {
                 font-size: ${configgers.font_size}px;
                 animation-name: ${configgers.animation};
                 animation-duration: 0.5s;
-                animation-timing-function: ${"ease-in" if configgers.animation=="fall" else "linear"};
+                animation-timing-function: ${(configgers.animation=="fall") ? "ease-in" : "linear"};
                 animation-fill-mode: forwards;
                 animation-iteration-count: ${configgers.iteration_count};
                 animation-delay: ${configgers.delay}s;
