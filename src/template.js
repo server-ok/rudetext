@@ -60,7 +60,7 @@ export default function template(configgers) {
 
 
         </style>
-    <text class="THEtext" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">${configgers.text}</text>
+    <text class="THEtext" x="50%" y="50%" dominant-baseline="middle" text-anchor="${configgers.anchor}">${configgers.text}</text>
     </svg>
     `
 

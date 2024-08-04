@@ -10,7 +10,8 @@ export default async function rudeText(req, res) {
         "animation": req.query.anim_name || "fall",
         "delay": req.query.delay || 0,
         "font": req.query.font || "Segoe UI",
-        "font_size": req.query.font_size || 16
+        "font_size": req.query.font_size || 16,
+        "anchor": req.query.anchor || "end",
     }
 
     let anims = ["fall"]
