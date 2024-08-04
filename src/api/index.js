@@ -11,10 +11,11 @@ export default async function rudeText(req, res) {
         "delay": req.query.delay || 0,
         "font": req.query.font || "Segoe UI",
         "font_size": req.query.font_size || 16,
-        "anchor": req.query.anchor || "end",
+        "anchor": req.query.anchor || "middle",
+        "iteration_count": req.query.iteration_count || 1,
     }
 
-    let anims = ["fall"]
+    let anims = ["fall", "rainbow"]
 
     if (!anims.includes(configgers["animation"]))
     {

@@ -17,8 +17,9 @@ export default function template(configgers) {
                 font-size: ${configgers.font_size}px;
                 animation-name: ${configgers.animation};
                 animation-duration: 0.5s;
-                animation-timing-function: ease-in;
+                animation-timing-function: ${"ease-in" if configgers.animation=="fall" else "linear"};
                 animation-fill-mode: forwards;
+                animation-iteration-count: ${configgers.iteration_count};
                 animation-delay: ${configgers.delay}s;
                 transform-origin: center;
             }
@@ -55,6 +56,41 @@ export default function template(configgers) {
                 100% {
                     fill: #${configgers.text_color};
                     transform: translate(2px, 2px);
+                }
+            }
+
+            @keyframes rainbow {
+                0% {
+                    fill: red;
+                }
+
+                14% {
+                    fill: orange;
+                }
+
+                28% {
+
+                    fill: yellow;
+                }
+
+                42% {
+                    fill: green;
+                }
+
+                56% {
+                    fill: cyan;
+                }
+
+                70% {
+                    fill: blue;
+                }
+
+                84% {
+                    fill: purple;
+                }
+
+                100% {
+                    fill: red;
                 }
             }
 
