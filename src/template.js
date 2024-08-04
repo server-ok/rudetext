@@ -18,7 +18,7 @@ export default function template(configgers) {
                 animation-duration: 0.5s;
                 animation-timing-function: ease-in;
                 animation-fill-mode: forwards;
-                animation-delay: ${configger.delay};
+                animation-delay: ${configgers.delay};
             }
 
             @keyframes fall {
