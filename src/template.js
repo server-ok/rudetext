@@ -19,6 +19,7 @@ export default function template(configgers) {
                 animation-timing-function: ease-in;
                 animation-fill-mode: forwards;
                 animation-delay: ${configgers.delay};
+                transform-origin: center;
             }
 
             @keyframes fall {
