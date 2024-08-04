@@ -24,7 +24,7 @@ export default function template(configgers) {
             @keyframes fall {
                 0% {
                     color: transparent;
-                    transform: scale(40, 40);
+                    transform: scale(1.5, 1.5);
                 }
                 50% {
                     color: #${configgers.text_color};
