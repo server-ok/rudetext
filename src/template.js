@@ -18,48 +18,48 @@ export default function template(configgers) {
                 animation-duration: 0.5s;
                 animation-timing-function: ease-in;
                 animation-fill-mode: forwards;
-                animation-delay: ${configgers.delay};
+                animation-delay: ${configgers.delay}s;
                 transform-origin: center;
             }
 
             @keyframes fall {
                 0% {
-                    color: transparent;
+                    fill: transparent;
                     transform: scale(1.5, 1.5);
                 }
                 50% {
-                    color: #${configgers.text_color};
+                    fill: #${configgers.text_color};
                     transform: scale(1, 1);
                 }
                 55% {
-                    color: #${configgers.text_color};
+                    fill: #${configgers.text_color};
                     transform: translate(10px, 10px);
                 }
                 60% {
-                    color: red;
+                    fill: red;
                     transform: translate(-10px, 5px);
                 }
                 70% {
-                    color: red;
+                    fill: red;
                     transform: translate(5px, 10px);
                 }
                 80% {
-                    color: #${configgers.text_color};
+                    fill: #${configgers.text_color};
                     transform: translate(-5px, 2px);
                 }
                 90% {
-                    color: red;
+                    fill: red;
                     transform: translate(3px, 3px);
                 }
                 100% {
-                    color: #${configgers.text_color};
+                    fill: #${configgers.text_color};
                     transform: translate(2px, 2px);
                 }
             }
 
 
         </style>
-    <text class="THEtext" x="250" y="100">${configgers.text}</text>
+    <text class="THEtext" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">${configgers.text}</text>
     </svg>
     `
 
