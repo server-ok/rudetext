@@ -7,8 +7,8 @@ export default function template(configgers) {
         <style>
 
             @font-face {
-                font-family: punky;
-                src: url("${punky}") format('truetype');
+                font-family: 'punky';
+                src: url(${punky}) format('truetype');
             }
 
             .THEtext {
