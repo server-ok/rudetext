@@ -5,7 +5,7 @@ export default async function rudeText(req, res) {
 
 
     let configgers = {
-        "text": req.query.text || "Default text. You better set it to something lol.",
+        "text": req.query.text || "Default text!!!",
         "text_color": req.query.text_color || "FFFFFF",
         "animation": req.query.animation || "fall",
         "delay": req.query.delay || 0,
@@ -17,7 +17,7 @@ export default async function rudeText(req, res) {
     }
 
     configgers["width"] = req.query.width || configgers.font_size*(configgers.text.length+2)/2;
-    configgers["height"] = req.query.height || configgers.font_size;
+    configgers["height"] = req.query.height || configgers.font_size*1.5;
 
     let anims_repeating = ["rainbow"]
     let anims_onetime = ["fall"]
