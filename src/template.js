@@ -96,7 +96,7 @@ export default function template(configgers) {
 
 
         </style>
-    <text class="THEtext" x="${configgers.anchor == "middle" ? "50%" : (configgers.anchor == "end" ? "100%" : "0%")}" y="100%" dominant-baseline="auto" text-anchor="${configgers.anchor}">${configgers.text}</text>
+    <text class="THEtext" x="${configgers.anchor == "middle" ? "50" : (configgers.anchor == "end" ? "100" : "0")}%" y="${configgers.dominant_baseline == "middle" ? "50" : (configgers.dominant_baseline == "auto" ? "100" : "0")}%" dominant-baseline="${configgers.dominant_baseline}" text-anchor="${configgers.anchor}">${configgers.text}</text>
     </svg>
     `
 
