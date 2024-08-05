@@ -36,11 +36,11 @@
     - [Customizations](#animation-customizations)
 
 # Using RUDETEXT
-To use RUDETEXT in markdown, you use markdown's `![alt text](image)`. For example, `![Rainbow Text](https://rudetext.vercel.app/api?text=Rainbow+Text&animation=rainbow&height=32&width=96&dominant_baseline=auto)` shows up as ![Rainbow Text](https://rudetext.vercel.app/api?text=Rainbow+Text&animation=rainbow&height=32&width=96&dominant_baseline=auto). Query parameters are separated by `&`. Spaces can be added with `+` or `%20`. + sign can be added with `%2b`. So, you should consider escaping your strings before using them in RUDETEXT.
+To use RUDETEXT in markdown, you use markdown's `![alt text](image)`. For example, `![Rainbow Text](https://rudetext.vercel.app/api?text=Rainbow+Text&animation=rainbow&height=16&width=96&dominant_baseline=auto)` shows up as ![Rainbow Text](https://rudetext.vercel.app/api?text=Rainbow+Text&animation=rainbow&height=16&width=96&dominant_baseline=auto). Query parameters are separated by `&`. Spaces can be added with `+` or `%20`. + sign can be added with `%2b`. So, you should consider escaping your strings before using them in RUDETEXT.
   
 # Text + SVG
 Text can be passed to RUDETEXT by using `text` query parameter.  
-As RUDETEXT cannot access DOM to calculate text width and height, default SVG sizes are `width = font_size * (text.length + 2) / 2` and `height = font_size`.  
+As RUDETEXT cannot access DOM to calculate text width and height, default SVG sizes are `width = font_size * (text.length + 2) / 2` and `height = font_size * 1.5`.  
 You can set your width and height in pixels manually by passing the `width` and `height` query parameters.  
   
 # Text customizations
