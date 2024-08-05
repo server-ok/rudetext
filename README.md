@@ -7,10 +7,10 @@
 </p>
 <p align="center">
   <a href="https://github.com/server-ok/">
-    <img alt="GitHub commit activity" src="https://img.shields.io/badge/i_love-milk-white?logo=github&style=for-the-badge&labelColor=000000"/>
+    <img alt="GitHub commit activity" src="https://img.shields.io/badge/i_love-milk-black?style=for-the-badge&labelColor=FFFFFF"/>
   </a>
   <a href="https://github.com/server-ok/rudetext/">
-    <img alt="GitHub commit activity" src="https://img.shields.io/badge/RUDETEXT-black?style=for-the-badge&logo=github"/>
+    <img alt="GitHub commit activity" src="https://img.shields.io/badge/this_TEXT-is_very_RUDE-black?style=for-the-badge&labelColor=FFFFFF&color=000000"/>
   </a>
   <a href="https://github.com/server-ok/rudetext/commits/">
     <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/t/server-ok/rudetext?style=for-the-badge&label=COMMITS&labelColor=FFFFFF&color=000000"/>
