@@ -17,7 +17,7 @@ export default async function rudeText(req, res) {
     }
 
     configgers["width"] = req.query.width || configgers.font_size*(configgers.text.length+2)/2;
-    configgers["height"] = req.query.height || configgers.font_size*1.5;
+    configgers["height"] = req.query.height || configgers.font_size;
 
     let anims_repeating = ["rainbow"]
     let anims_onetime = ["fall"]
