@@ -30,7 +30,7 @@ export default async function rudeText(req, res) {
         configgers["animation"] = "fall";
     }
 
-    let anim_repeats = anims_repeating.includes(configgers["anim_name"])
+    let anim_repeats = anims_repeating.includes(configgers["animation"]);
 
     if (configgers["iteration_count"] == -1) {
         configgers["iteration_count"] = anim_repeats ? "infinite" : 1;
