@@ -30,13 +30,19 @@
 
 # ![Overview](https://rudetext.vercel.app/api?text=Overview&font=Segoe+UI&font_size=32&animation=rainbow&duration=10&height=32)
   - [Using RUDETEXT](#using-rudetext)
-  - [Text + SVG Rect](#text-+-svg-rect)
-    - [Customizations](#text-customizations)
+  - [Text + SVG](#text-+-svg)
+    - [Customizations](##text-customizations)
   - [Animations](#animations)
     - [Customizations](#animation-customizations)
 
 # Using RUDETEXT
-To use RUDETEXT in markdown, you use markdown's `![alt text](image)`. For example, `![Rainbow Text](https://rudetext.vercel.app/api?text=Rainbow+Text&animation=rainbow)` shows up as ![Rainbow Text](https://rudetext.vercel.app/api?text=Rainbow+Text&animation=rainbow). Which is nice.
+To use RUDETEXT in markdown, you use markdown's `![alt text](image)`. For example, `![Rainbow Text](https://rudetext.vercel.app/api?text=Rainbow+Text&animation=rainbow&height=32&width=96)` shows up as ![Rainbow Text](https://rudetext.vercel.app/api?text=Rainbow+Text&animation=rainbow&height=32&width=96). Query parameters are separated by `&`. Spaces can be added with `+` or `%20`. + sign can be added with `%2b`. So, you should consider escaping your strings before using them in RUDETEXT.
 
-# Text + SVG rect
-Text in Rudetext can be set by passing the `text` query parameter. For example, `
+# Text + SVG
+Text can be passed to RUDETEXT by using `text` query parameter. As RUDETEXT cannot access DOM to calculate text width and height, default SVG sizes are `width = font_size * (text.length + 2) / 2` and `height = font_size`. You can set your width and height in pixels manually by passing the `width` and `height` query parameters.  
+
+## Text customizations
+`text_color` - Text color in RGB HEX (#FFFFFF by default)
+`font` - Font of the text. Is a string. `Segoe UI` by default.
+`font_size` - Font size of the text in pixels. (16 by default)
+`anchor` - Anchor of the text. `start`, `middle`, `end` etc. `start` by default.
