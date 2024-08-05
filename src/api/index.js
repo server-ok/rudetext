@@ -12,18 +12,28 @@ export default async function rudeText(req, res) {
         "font": req.query.font || "Segoe UI",
         "font_size": req.query.font_size || 16,
         "anchor": req.query.anchor || "start",
-        "iteration_count": req.query.iteration_count || 1,
+        "iteration_count": req.query.iteration_count || -1,
         "duration": req.query.duration || 0.5,
     }
 
     configgers["width"] = req.query.width || configgers.font_size*configgers.text.length/2;
     configgers["height"] = req.query.height || configgers.font_size*1.5;
 
-    let anims = ["fall", "rainbow"]
+    let anims_repeating = ["rainbow"]
+    let anims_onetime = ["fall"]
+
+
+    let anims = anims_repeating.concat(anims_onetime);
 
     if (!anims.includes(configgers["animation"]))
     {
         configgers["animation"] = "fall";
+    }
+
+    let anim_repeats = anims_repeating.includes(configgers["anim_name"])
+
+    if (configgers["iteration_count"] == -1) {
+        configgers["iteration_count"] = anim_repeats ? "infinite" : 1;
     }
 
     let resp = template(configgers);
