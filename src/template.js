@@ -1,4 +1,5 @@
-import { punky } from "/fonts/base64.js"
+const b64 = require("./fonts/base64.js");
+const punky = b64.punky;
 
 
 export default function template(configgers) {

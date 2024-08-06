@@ -1,4 +1,4 @@
-import template from "/template.js";
+import template from "../template.js";
 
 
 export default async function rudeText(req, res) {
