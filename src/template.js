@@ -2,7 +2,7 @@ const b64 = require("./fonts/base64.js");
 const punky = b64.punky;
 
 
-export default function template(configgers) {
+template = function(configgers) {
     const animations = {
         "fall":
             `@keyframes fall {
@@ -118,3 +118,5 @@ export default function template(configgers) {
 
     return element;
 }
+
+module.exports = template;
