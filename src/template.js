@@ -1,30 +1,8 @@
 import { punky } from "./fonts/base64.js"
 
-export default function template(configgers) {
-
-    var element = `
-        <svg width="${configgers.width}" height="${configgers.height}" viewBox="0 0 ${configgers.width} ${configgers.height}" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <style>
-
-            @font-face {
-                font-family: 'punky';
-                src: url(${punky}) format('truetype');
-            }
-
-            .THEtext {
-                font-family: '${configgers.font}', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
-                fill: transparent;
-                font-size: ${configgers.font_size}px;
-                animation-name: ${configgers.animation};
-                animation-duration: ${configgers.duration}s;
-                animation-timing-function: ${(configgers.animation=="fall") ? "ease-in" : "linear"};
-                animation-fill-mode: forwards;
-                animation-iteration-count: ${configgers.iteration_count};
-                animation-delay: ${configgers.delay}s;
-                transform-origin: center;
-            }
-
-            @keyframes fall {
+const animations = {
+    "fall":
+        `@keyframes fall {
                 0% {
                     fill: transparent;
                     transform: scale(20, 20);
@@ -57,9 +35,9 @@ export default function template(configgers) {
                     fill: #${configgers.text_color};
                     transform: translate(2px, 2px);
                 }
-            }
-
-            @keyframes rainbow {
+            }`,
+    "rainbow":
+        `@keyframes rainbow {
                 0% {
                     fill: red;
                 }
@@ -92,7 +70,34 @@ export default function template(configgers) {
                 100% {
                     fill: red;
                 }
+            }`
+}
+
+export default function template(configgers) {
+
+    var element = `
+        <svg width="${configgers.width}" height="${configgers.height}" viewBox="0 0 ${configgers.width} ${configgers.height}" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <style>
+
+            @font-face {
+                font-family: 'punky';
+                src: url(${punky}) format('truetype');
             }
+
+            .THEtext {
+                font-family: '${configgers.font}', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+                fill: transparent;
+                font-size: ${configgers.font_size}px;
+                animation-name: ${configgers.animation};
+                animation-duration: ${configgers.duration}s;
+                animation-timing-function: ${(configgers.animation=="fall") ? "ease-in" : "linear"};
+                animation-fill-mode: forwards;
+                animation-iteration-count: ${configgers.iteration_count};
+                animation-delay: ${configgers.delay}s;
+                transform-origin: center;
+            }
+
+            ${animations[configgers.animation]}
 
 
         </style>
