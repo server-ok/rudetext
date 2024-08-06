@@ -112,7 +112,7 @@ template = function(configgers) {
 
         </style>
     <text class="THEtext" x="${configgers.anchor == "middle" ? "50" : (configgers.anchor == "end" ? "100" : "0")}%" y="${configgers.dominant_baseline == "middle" ? "50" : (configgers.dominant_baseline == "auto" ? "100" : "0")}%" dominant-baseline="${configgers.dominant_baseline}" text-anchor="${configgers.anchor}">${configgers.text}
-    ${(configgers.animation=="wave") ? `<animate attributeName="dy" values="${sinMatrix.join(";")}" dur="${configgers.duration}s" repeatCount="${configgers.iteration_count == "infinite" ? "indefinite" : configgers.iteration_count}">` : ''}</text>
+    ${(configgers.animation=="wave") ? `<animate attributeName="dy" values="${sinMatrix.join(";")}" dur="${configgers.duration}s" repeatCount="${configgers.iteration_count == "infinite" ? "indefinite" : configgers.iteration_count}" />` : ''}</text>
     </svg>
     `
 
