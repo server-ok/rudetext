@@ -1,0 +1,23 @@
+{
+  "name": "rudetext",
+  "version": "1.0.0",
+  "description": "nice svg text",
+  "keywords": [
+    "svg", "text", "readme"
+  ],
+  "main": "src/index.js",
+  "type": "module",
+  "homepage": "https://github.com/server-ok/rudetext",
+  "bugs": {
+    "url": "https://github.com/server-ok/rudetext/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/server-ok/rudetext.git"
+  },
+  "author": "server-ok",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
