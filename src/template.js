@@ -79,10 +79,10 @@ export default function template(configgers) {
         <svg width="${configgers.width}" height="${configgers.height}" viewBox="0 0 ${configgers.width} ${configgers.height}" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <style>
 
-            @font-face {
+            ${configgers.font == 'punky' ? `@font-face {
                 font-family: 'punky';
                 src: url(${punky}) format('truetype');
-            }
+            }` : ''}
 
             .THEtext {
                 font-family: '${configgers.font}', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
