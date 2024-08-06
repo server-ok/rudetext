@@ -75,14 +75,23 @@ export default function template(configgers) {
                 }`
     }
 
+    if (configgers.animation == "wave") {
+        let sinMatrix = [[]];
+        for (let frame=0;frame<5;frame++) {
+            for (let c=0;c<configger.text.length;c++){
+                sinMatrix[frame][c] = Math.round(Math.sin(c+1)*8-Math.sin(c)*8);
+            }
+        }
+    }
+
     var element = `
         <svg width="${configgers.width}" height="${configgers.height}" viewBox="0 0 ${configgers.width} ${configgers.height}" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <style>
 
-            ${configgers.font == 'punky' ? `@font-face {
+            ${if (configgers.font == 'punky') `@font-face {
                 font-family: 'punky';
                 src: url(${punky}) format('truetype');
-            }` : ''}
+            }`}
 
             .THEtext {
                 font-family: '${configgers.font}', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
@@ -97,11 +106,12 @@ export default function template(configgers) {
                 transform-origin: center;
             }
 
-            ${animations[configgers.animation]}
+            ${animations[configgers.animation] || ""}
 
 
         </style>
-    <text class="THEtext" x="${configgers.anchor == "middle" ? "50" : (configgers.anchor == "end" ? "100" : "0")}%" y="${configgers.dominant_baseline == "middle" ? "50" : (configgers.dominant_baseline == "auto" ? "100" : "0")}%" dominant-baseline="${configgers.dominant_baseline}" text-anchor="${configgers.anchor}">${configgers.text}</text>
+    <text class="THEtext" x="${configgers.anchor == "middle" ? "50" : (configgers.anchor == "end" ? "100" : "0")}%" y="${configgers.dominant_baseline == "middle" ? "50" : (configgers.dominant_baseline == "auto" ? "100" : "0")}%" dominant-baseline="${configgers.dominant_baseline}" text-anchor="${configgers.anchor}">${configgers.text}
+    ${if (configgers.animation=="wave") `<animate attributeName="dy" values="${sinMatrix.join(";")}" dur="${configgers.duration}s" repeatCount="${configgers.iteration_count == "infinite" ? "indefinite" : configgers.iteration_count}"></text>`}
     </svg>
     `
 
