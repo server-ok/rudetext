@@ -89,10 +89,10 @@ template = function(configgers) {
         <svg width="${configgers.width}" height="${configgers.height}" viewBox="0 0 ${configgers.width} ${configgers.height}" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <style>
 
-            ${if (configgers.font == 'punky') `@font-face {
+            ${(configgers.font == 'punky') ? `@font-face {
                 font-family: 'punky';
                 src: url(${punky}) format('truetype');
-            }`}
+            }` : ''}
 
             .THEtext {
                 font-family: '${configgers.font}', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
@@ -112,7 +112,7 @@ template = function(configgers) {
 
         </style>
     <text class="THEtext" x="${configgers.anchor == "middle" ? "50" : (configgers.anchor == "end" ? "100" : "0")}%" y="${configgers.dominant_baseline == "middle" ? "50" : (configgers.dominant_baseline == "auto" ? "100" : "0")}%" dominant-baseline="${configgers.dominant_baseline}" text-anchor="${configgers.anchor}">${configgers.text}
-    ${if (configgers.animation=="wave") `<animate attributeName="dy" values="${sinMatrix.join(";")}" dur="${configgers.duration}s" repeatCount="${configgers.iteration_count == "infinite" ? "indefinite" : configgers.iteration_count}">`}</text>
+    ${(configgers.animation=="wave") ? `<animate attributeName="dy" values="${sinMatrix.join(";")}" dur="${configgers.duration}s" repeatCount="${configgers.iteration_count == "infinite" ? "indefinite" : configgers.iteration_count}">` : ''}</text>
     </svg>
     `
 
