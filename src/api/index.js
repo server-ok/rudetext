@@ -1,7 +1,7 @@
-import template from "../template.js";
+var template = require("../template.js");
 
 
-export default async function rudeText(req, res) {
+async function rudeText(req, res) {
 
 
     let configgers = {
@@ -19,8 +19,9 @@ export default async function rudeText(req, res) {
 
     configgers["width"] = req.query.width || configgers.font_size*(configgers.text.length+2)/2;
     configgers["height"] = req.query.height || configgers.font_size*1.5;
+    configgers["amplitude"] = req.query.amplitude || configgers.height/10
 
-    let anims_repeating = ["rainbow"]
+    let anims_repeating = ["rainbow", "wave"]
     let anims_onetime = ["fall"]
 
 
@@ -43,3 +44,4 @@ export default async function rudeText(req, res) {
 
 }
 
+module.exports = rudeText;

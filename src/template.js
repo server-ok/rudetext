@@ -1,7 +1,8 @@
-import { punky } from "./fonts/base64.js"
+const b64 = require("./fonts/base64.js");
+const punky = b64.punky;
 
 
-export default function template(configgers) {
+template = function(configgers) {
     const animations = {
         "fall":
             `@keyframes fall {
@@ -72,14 +73,34 @@ export default function template(configgers) {
                     100% {
                         fill: red;
                     }
-                }`
+                }`,
+        "wave":
+            `@keyframes wave {
+                0% {
+                    fill: #${configgers.text_color};
+                }
+                100% {
+                    fill: #${configgers.text_color};
+                }
+            }`
+    }
+
+    if (configgers.animation == "wave") {
+        var sinMatrix = Array.from(Array(32), () => new Array(configgers.text.length));
+        for (let frame=0;frame<32;frame++) {
+            var lastThing = 0;
+            for (let c=0;c<configgers.text.length;c++){
+                sinMatrix[frame][c] = -lastThing + Math.round(Math.sin(frame+c+1)*configgers.amplitude);
+                lastThing += sinMatrix[frame][c];
+            }
+        }
     }
 
     var element = `
         <svg width="${configgers.width}" height="${configgers.height}" viewBox="0 0 ${configgers.width} ${configgers.height}" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <style>
 
-            ${configgers.font == 'punky' ? `@font-face {
+            ${(configgers.font == 'punky') ? `@font-face {
                 font-family: 'punky';
                 src: url(${punky}) format('truetype');
             }` : ''}
@@ -97,13 +118,16 @@ export default function template(configgers) {
                 transform-origin: center;
             }
 
-            ${animations[configgers.animation]}
+            ${animations[configgers.animation] || ""}
 
 
         </style>
-    <text class="THEtext" x="${configgers.anchor == "middle" ? "50" : (configgers.anchor == "end" ? "100" : "0")}%" y="${configgers.dominant_baseline == "middle" ? "50" : (configgers.dominant_baseline == "auto" ? "100" : "0")}%" dominant-baseline="${configgers.dominant_baseline}" text-anchor="${configgers.anchor}">${configgers.text}</text>
+    <text class="THEtext" x="${configgers.anchor == "middle" ? "50" : (configgers.anchor == "end" ? "100" : "0")}%" y="${configgers.dominant_baseline == "middle" ? "50" : (configgers.dominant_baseline == "auto" ? "100" : "0")}%" dominant-baseline="${configgers.dominant_baseline}" text-anchor="${configgers.anchor}">${configgers.text}
+    ${(configgers.animation=="wave") ? `<animate attributeName="dy" values="${sinMatrix.join(";")}" dur="${configgers.duration}s" repeatCount="${configgers.iteration_count == "infinite" ? "indefinite" : configgers.iteration_count}" />` : ''}</text>
     </svg>
     `
 
     return element;
 }
+
+module.exports = template;
