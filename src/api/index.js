@@ -1,7 +1,7 @@
-import template from "../template.js";
+var template = require("../template.js");
 
 
-export default async function rudeText(req, res) {
+async function rudeText(req, res) {
 
 
     let configgers = {
@@ -43,3 +43,4 @@ export default async function rudeText(req, res) {
 
 }
 
+module.exports = rudeText;
