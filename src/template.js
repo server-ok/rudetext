@@ -89,7 +89,7 @@ template = function(configgers) {
         var sinMatrix = Array.from(Array(16), () => new Array(configgers.text.length));
         for (let frame=0;frame<16;frame++) {
             for (let c=0;c<configgers.text.length;c++){
-                sinMatrix[frame][c] = Math.round((Math.sin(frame+c)*8)-sinMatrix[frame][c-1]);
+                sinMatrix[frame][c] = Math.round((Math.sin(frame+c)*8)-sinMatrix[frame][Math.max(0, c-1)]);
             }
         }
     }
