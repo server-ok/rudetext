@@ -87,7 +87,7 @@ template = function(configgers) {
 
     if (configgers.animation == "wave") {
         var sinMatrix = Array.from(Array(16), () => new Array(configgers.text.length));
-        for (let frame=0;frame<6;frame++) {
+        for (let frame=0;frame<16;frame++) {
             for (let c=0;c<configgers.text.length;c++){
                 sinMatrix[frame][c] = Math.round(Math.sin(frame+(c+1))*8-Math.sin(frame+c)*8);
             }
