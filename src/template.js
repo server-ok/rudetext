@@ -73,14 +73,20 @@ template = function(configgers) {
                     100% {
                         fill: red;
                     }
-                }`
+                }`,
+        "wave":
+            `@keyframes wave {
+                0% {
+                    fill: #${configgers.text_color};
+                }
+            }`
     }
 
     if (configgers.animation == "wave") {
-        var sinMatrix = Array.from(Array(5), () => new Array(configgers.text.length));
-        for (let frame=0;frame<5;frame++) {
+        var sinMatrix = Array.from(Array(6), () => new Array(configgers.text.length));
+        for (let frame=0;frame<6;frame++) {
             for (let c=0;c<configgers.text.length;c++){
-                sinMatrix[frame][c] = Math.round(Math.sin(frame*(c+1))*8-Math.sin(frame*c)*8);
+                sinMatrix[frame][c] = Math.round(Math.sin((frame*configgers.text.length)+(c+1))*8-Math.sin((frame*configgers.text.length+)c)*8);
             }
         }
     }
