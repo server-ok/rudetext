@@ -73,5 +73,5 @@ Repeating animations: `rainbow, wave`.
 # Animation customizations
 `delay` - Delay of the animation. Can be used to "chain" multiple RUDETEXT SVGs. (`0` by default)  
 `duration` - Duration of the animation in seconds. Can be used to speed up or slow down animations. (`0.5` by default)  
-`iteration_count` - Number of times the animation is repeated. Can be `infinite` to loop it forever. (`1` for oneshot animations, `infinite` for repeating animations by default)
-`amplitude` - Amplitude of the `wave` animation. In pixels. Only specific to the `wave` animation for now. (`height / 10` by default)
+`iteration_count` - Number of times the animation is repeated. Can be `infinite` to loop it forever. (`1` for oneshot animations, `infinite` for repeating animations by default)  
+`amplitude` - Amplitude of the `wave` animation. In pixels. Only specific to the `wave` animation for now. (`height / 10` by default)  
