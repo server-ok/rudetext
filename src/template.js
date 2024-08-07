@@ -86,10 +86,12 @@ template = function(configgers) {
     }
 
     if (configgers.animation == "wave") {
-        var sinMatrix = Array.from(Array(16), () => new Array(configgers.text.length));
-        for (let frame=0;frame<16;frame++) {
+        var sinMatrix = Array.from(Array(32), () => new Array(configgers.text.length));
+        for (let frame=0;frame<32;frame++) {
+            var lastThing = 0;
             for (let c=0;c<configgers.text.length;c++){
-                sinMatrix[frame][c] = Math.round((Math.sin(frame+c)*8)-sinMatrix[frame][Math.max(0, c-1)]);
+                sinMatrix[frame][c] = -lastThing + Math.round(Math.sin(frame+c+1)*configgers.amplitude);
+                lastThing += sinMatrix[frame][c];
             }
         }
     }
