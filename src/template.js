@@ -79,6 +79,9 @@ template = function(configgers) {
                 0% {
                     fill: #${configgers.text_color};
                 }
+                100% {
+                    fill: #${configgers.text_color};
+                }
             }`
     }
 
@@ -86,7 +89,7 @@ template = function(configgers) {
         var sinMatrix = Array.from(Array(6), () => new Array(configgers.text.length));
         for (let frame=0;frame<6;frame++) {
             for (let c=0;c<configgers.text.length;c++){
-                sinMatrix[frame][c] = Math.round(Math.sin((frame*configgers.text.length)+(c+1))*8-Math.sin((frame*configgers.text.length)+c)*8);
+                sinMatrix[frame][c] = Math.round(Math.sin(frame+(c+1))*8-Math.sin(frame+c)*8);
             }
         }
     }
