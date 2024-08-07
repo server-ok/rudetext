@@ -56,7 +56,7 @@ You can set your width and height in pixels manually by passing the `width` and 
 There are multiple animations in RUDETEXT. You can choose the animation by passing `animation` query parameter.  
 
 Oneshot animations: `fall`.  
-Repeating animations: `rainbow`.  
+Repeating animations: `rainbow, wave`.  
   
 `fall` animation example:  
 `![RAHH!!](https://rudetext.vercel.app/api?text=RAHH!!&animation=fall&iteration_count=infinite&dominant_baseline=hanging)`  
@@ -65,8 +65,13 @@ Repeating animations: `rainbow`.
 `rainbow` animation example:  
 `![Rainbowy Rainbows :3](https://rudetext.vercel.app/api?text=Rainbowy+Rainbows+:3&animation=rainbow&duration=3)`  
 ![Rainbowy Rainbows :3](https://rudetext.vercel.app/api?text=Rainbowy+Rainbows+:3&animation=rainbow&duration=3)  
+  
+`wave` animation example:  
+`![Wavy Wavies ~u~](https://rudetext.vercel.app/api?text=Wavy+Wavies+~u~&animation=wave&duration=5)`  
+![Wavy Wavies ~u~](https://rudetext.vercel.app/api?text=Wavy+Wavies+~u~&animation=wave&duration=5)  
 
 # Animation customizations
 `delay` - Delay of the animation. Can be used to "chain" multiple RUDETEXT SVGs. (`0` by default)  
 `duration` - Duration of the animation in seconds. Can be used to speed up or slow down animations. (`0.5` by default)  
 `iteration_count` - Number of times the animation is repeated. Can be `infinite` to loop it forever. (`1` for oneshot animations, `infinite` for repeating animations by default)
+`amplitude` - Amplitude of the `wave` animation. In pixels. Only specific to the `wave` animation for now. (`height / 10` by default)
